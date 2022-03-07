@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from car_api.views import cars, popular, rate
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cars/', cars, name="cars"),
+    path('cars/<int:pk>', cars, name="del_cars"),
+    path('rate/', rate, name="rate"),
+    path('popular/', popular, name="popular"),
+
 ]
